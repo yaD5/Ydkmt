@@ -197,7 +197,13 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
     elseif item == "Booth Slot Voucher" and gems <= 25000 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping) 
-    end
+        
+	processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
+    elseif gems == 1 and snipeNormalPets == true then
+	snipeNormal = true
+	local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
+        processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)  
+    end 
 end
 
 Booths_Broadcast.OnClientEvent:Connect(function(username, message)
