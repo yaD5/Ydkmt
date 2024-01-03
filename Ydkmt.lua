@@ -247,7 +247,7 @@ local function jumpToServer()
     if not randomCount then
        randomCount = 2
     end
-    ts:TeleportToPlaceInstance(15502339080, servers[math.random(1, randomCount)], game:GetService("Players").LocalPlayer) 
+    ts:TeleportToPlaceInstance(15588442388, servers[math.random(1, randomCount)], game:GetService("Players").LocalPlayer) 
 end
 
 Players.PlayerRemoving:Connect(function(player)
