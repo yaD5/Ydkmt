@@ -144,7 +144,7 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
     end
 
     local price = gems / amount
-    task.wait(3.05)
+    task.wait(3.15)
     if type.huge and price <= 1000000 then	
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         if boughtPet == true then
