@@ -13,7 +13,7 @@ local rs = game:GetService("ReplicatedStorage")
 local playerID, snipeNormal
 
 if not snipeNormalPets then
-    snipeNormalPets = false
+    snipeNormalPets = true
 end
 
 local vu = game:GetService("VirtualUser")
@@ -197,13 +197,7 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
     elseif item == "Booth Slot Voucher" and gems <= 25000 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping) 
-        
-	processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
-    elseif gems == 1 and snipeNormalPets == true then
-	snipeNormal = true
-	local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
-        processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)  
-    end 
+    end
 end
 
 Booths_Broadcast.OnClientEvent:Connect(function(username, message)
